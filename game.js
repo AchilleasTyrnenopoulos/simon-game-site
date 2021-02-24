@@ -88,7 +88,7 @@ function animatePress(currentColour)
 //check the answer of the user
 function checkAnswer(currentLevel)
 {
-  for(var i=0; i<currentLevel; i++)
+  for(let i=0; i<currentLevel; i++)
   {
     if(userClickedPattern[i] === gamePattern[i])
     {
