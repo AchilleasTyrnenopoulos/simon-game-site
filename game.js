@@ -1,8 +1,8 @@
-var buttonColours = ["red", "blue", "green","yellow"];
-var gamePattern = [];
-var userClickedPattern = [];
-var started = false;
-var level = 0;
+const buttonColours = ["red", "blue", "green","yellow"];
+const gamePattern = [];
+const userClickedPattern = [];
+let started = false;
+let level = 0;
 
 //check if key is pressed
 $(document).keypress(function () {
@@ -17,7 +17,7 @@ $(document).keypress(function () {
 //click on 'square' button
 $(".btn").click(function() {
   //get the id of the clicked 'square' and add it to userClickedPattern array
-  var userChosenColour = $(this).attr("id");
+  const userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
 
   //play the appropriate audio file
@@ -49,8 +49,8 @@ function nextSequence()
 
 
   //create random number and with it, 'choose' a square
-  var randomNumber = Math.floor(Math.random() * 4);
-  var randomChosenColour = buttonColours[randomNumber];
+  const randomNumber = Math.floor(Math.random() * 4);
+  const randomChosenColour = buttonColours[randomNumber];
 
   //add random 'square' to gamePattern array
   gamePattern.push(randomChosenColour);
@@ -72,7 +72,7 @@ function nextSequence()
 //play audio file function
 function playSound(colour)
 {
-  var audio = new Audio("sounds/" + colour + ".mp3");
+  const audio = new Audio("sounds/" + colour + ".mp3");
   audio.play();
 }
 
